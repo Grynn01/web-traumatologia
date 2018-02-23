@@ -4,9 +4,9 @@ from datetime import date
 
 
 class Assistant(models.Model):
-    nombres = models.CharField(max_length=200)
-    apellidos = models.CharField(max_length=200)
-    telefono = models.CharField(max_length=200)
+    nombres = models.CharField(max_length=30)
+    apellidos = models.CharField(max_length=30)
+    telefono = models.CharField(max_length=12)
     email = models.EmailField()
     date = models.DateField(default=date.today)
 
