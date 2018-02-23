@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="es">
+
+
+	<head>
+		<title>Preservación de Cadera Chile</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="{% static 'web/assets/css/skel.css' %}" />
+        <link rel="stylesheet" href="{% static 'web/assets/css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'web/assets/css/style-large.css' %}" />
+
+	</head>
+
+
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header">
+                <h1><a href="{% url 'index' %}" class="logo">Inicio</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="{% url 'info' %}">Informacion</a></li>
+                        <li><a href="{% url 'itinerario' %}">Itinerario</a></li>
+                        <li><a href="{% url 'signup new' %}">Inscripcion</a></li>
+                        <li><a href="{% url 'contact new' %}">Contacto</a></li>
+                    </ul>
+                </nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Curso Internacional de <br> preservacion de cadera</h2>
+				<p>Santiago, Chile - 2018</p>
+				<ul class="actions">
+					<li>
+						<a href="#links" class="button big">Informacion</a>
+                        <a href="#directores" class="button big">Organizadores</a>
+					</li>
+				</ul>
+			</section>
+
+	    <!-- Links -->
+			<section id="links" class="wrapper style1 align-center">
+				<div class="container">
+					<header>
+						<h2>Datos generales del curso</h2>
+						<p>A continuacion se encuentran las principales informaciones para los asistentes</p>
+					</header>
+					<div class="row 200%">
+                        <section class="4u 12u$(small)">
+							<i class="icon big rounded fa-comments"></i>
+							<p>Informacion general del curso, ubicacion del lugar y fechas.</p>
+                            <a href="{% url 'info' %}" class="button">Informacion</a>
+						</section>
+						<section class="4u 12u$(small)">
+							<i class="icon big rounded fa-list-alt"></i>
+							<p>Itinerario de Charlas, junto con todas las actividades a realizarse.</p>
+                            <a href="{% url 'itinerario' %}" class="button">Itineraio</a>
+						</section>
+						<section class="4u$ 12u$(small)">
+							<i class="icon big rounded fa-user-plus"></i>
+							<p>Para participar del curso solo basta con inscribirse aqui.</p>
+                            <a href="{% url 'signup new' %}" class="button">Inscripcion</a>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- Directores -->
+			<section id="directores" class="wrapper style2 align-center">
+				<div class="inner">
+					<header class="align-center">
+						<h2>Directores</h2>
+						<p>Organizadores del curso curso</p>
+					</header>
+					<div class="flex flex-3 align-center">
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static "web/images/silueta.png" %}" alt="Person 1" />
+							</div>
+							<h3>Dr. Martín Salgado Gonzalez</h3>
+							<p>Hospital Sotero del Río</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static "web/images/silueta.png" %}" alt="Person 2" />
+							</div>
+							<h3>Dr. Lautaro Campos Torres</h3>
+							<p>Hospital Clínico la Florida</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="{% static "web/images/silueta.png" %}" alt="Person 3" />
+							</div>
+							<h3>Dr. Mauricio Vergara Sepulveda</h3>
+							<p>Hospital Exequiel González Cortes</p>
+						</div>
+					</div>
+				</div>
+			</section>s
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="4u$ 12u$(medium) 12u$(large) ">
+							<ul class="icons big">
+                                <li><h4>Contactanos</h4></li>
+                                <li><a href="#" class="icon fa-envelope"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							</ul>
+						</section>
+					</div>
+					<ul class="copyright">
+						<li>&copy; All rights reserved.</li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+        <!-- Scripts -->
+
+            <script src="{% static 'web/assets/js/jquery.min.js' %}"></script>
+            <script src="{% static 'web/assets/js/skel.min.js' %}"></script>
+            <script src="{% static 'web/assets/js/skel-layers.min.js' %}"></script>
+            <script src="{% static 'web/assets/js/init.js' %}"></script>
+
+	</body>
+</html>
