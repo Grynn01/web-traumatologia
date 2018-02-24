@@ -5,7 +5,7 @@ from .form import AssistantForm, MessageForm
 
 
 def index(request):
-    return render(request, 'web/index.html')
+    return render(request, 'web/indexres.html')
 
 
 def info(request):
