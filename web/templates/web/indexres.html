@@ -36,131 +36,92 @@
 
 		<!-- Banner -->
 			<section id="banner">
-				<div class="inner">
+				<div class="inner row2">
 					<h1>Curso Internacional de <br> preservacion de cadera</h1>
 					<p>Santiago, Chile - 2018</p>
+                    <a href="#links" class="button">Informacion</a>
+                    <a href="#directores" class="button">Organizadores</a>
 				</div>
 			</section>
 
-		<!-- Highlights -->
-			<section class="wrapper">
+		<!-- Links -->
+			<section id="links" class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>Sem turpis amet semper</h2>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+						<h2>Datos generales del curso</h2>
+						<p>A continuacion se encuentran las principales informaciones para los asistentes</p>
 					</header>
 					<div class="highlights">
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-vcard-o"><span class="label">Icon</span></a>
-									<h3>Feugiat consequat</h3>
+									<i class="icon big rounded fa-comments"></i>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+								<p>Informacion general del curso, ubicacion del lugar y fechas.</p>
+                                <a href="{% url 'info' %}" class="button">Informacion</a>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-files-o"><span class="label">Icon</span></a>
-									<h3>Ante sem integer</h3>
+									<i class="icon big rounded fa-list-alt"></i>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+								<p>Itinerario de Charlas, junto con todas las actividades a realizarse.</p>
+                                <a href="{% url 'itinerario' %}" class="button">Itineraio</a>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<header>
-									<a href="#" class="icon fa-floppy-o"><span class="label">Icon</span></a>
-									<h3>Ipsum consequat</h3>
+									<i class="icon big rounded fa-user-plus"></i>
 								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#" class="icon fa-line-chart"><span class="label">Icon</span></a>
-									<h3>Interdum gravida</h3>
-								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#" class="icon fa-paper-plane-o"><span class="label">Icon</span></a>
-									<h3>Faucibus consequat</h3>
-								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<header>
-									<a href="#" class="icon fa-qrcode"><span class="label">Icon</span></a>
-									<h3>Accumsan viverra</h3>
-								</header>
-								<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+								<p>Para participar del curso solo basta con inscribirse aqui.</p>
+                                <a href="{% url 'signup new' %}" class="button">Inscripcion</a>
 							</div>
 						</section>
 					</div>
 				</div>
 			</section>
 
-		<!-- CTA -->
-			<section id="cta" class="wrapper">
-				<div class="inner">
-					<h2>Curabitur ullamcorper ultricies</h2>
-					<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
-				</div>
-			</section>
-
-		<!-- Testimonials -->
-			<section class="wrapper">
+        <!-- Directores -->
+			<section id="directores" class="wrapper style1">
 				<div class="inner">
 					<header class="special">
-						<h2>Faucibus consequat lorem</h2>
-						<p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor.</p>
+						<h2>Directores</h2>
+						<p>Organizadores del curso curso</p>
 					</header>
-					<div class="testimonials">
+					<div class="highlights">
 						<section>
-							<div class="content">
-								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								</blockquote>
-								<div class="author">
-									<div class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</div>
-									<p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
-								</div>
+							<div class="content2">
+								<header>
+									<div class="image round fit">
+								        <img src="{% static "web/images/silueta.png" %}" alt="Person 1" />
+							        </div>
+								</header>
+								<h3>Dr. Martín Salgado Gonzalez</h3>
+							    <p>Hospital Sotero del Río</p>
 							</div>
 						</section>
 						<section>
-							<div class="content">
-								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								</blockquote>
-								<div class="author">
-									<div class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</div>
-									<p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
-								</div>
+							<div class="content2">
+								<header>
+									<div class="image round fit">
+								        <img src="{% static "web/images/silueta.png" %}" alt="Person 1" />
+							        </div>
+								</header>
+								<h3>Dr. Lautaro Campos Torres</h3>
+							    <p>Hospital Clínico la Florida</p>
 							</div>
 						</section>
-						<section>
-							<div class="content">
-								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
-								</blockquote>
-								<div class="author">
-									<div class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</div>
-									<p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
-								</div>
+                        <section>
+							<div class="content2">
+								<header>
+									<div class="image round fit">
+								        <img src="{% static "web/images/silueta.png" %}" alt="Person 1" />
+							        </div>
+								</header>
+								<h3>Dr. Mauricio Vergara Sepulveda</h3>
+							    <p>Hospital Exequiel González Cortes</p>
 							</div>
 						</section>
 					</div>
@@ -171,31 +132,17 @@
 			<footer id="footer">
 				<div class="inner">
 					<div class="content">
-						<section>
-							<h3>Accumsan montes viverra</h3>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
-						</section>
-						<section>
-							<h4>Sem turpis amet semper</h4>
-							<ul class="alt">
-								<li><a href="#">Dolor pulvinar sed etiam.</a></li>
-								<li><a href="#">Etiam vel lorem sed amet.</a></li>
-								<li><a href="#">Felis enim feugiat viverra.</a></li>
-								<li><a href="#">Dolor pulvinar magna etiam.</a></li>
-							</ul>
-						</section>
-						<section>
-							<h4>Magna sed ipsum</h4>
-							<ul class="plain">
-								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
-								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+                        <section>
+							<ul class="icons">
+                                <li><h4>Contactanos</h4></li>
+                                <li><a href="{% url 'contact new' %}" class="icon fa-envelope"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 							</ul>
 						</section>
 					</div>
 					<div class="copyright">
-						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+						&copy; Matias Ramirez. Photos and CSS <a href="https://unsplash.co">Unsplash</a>.
 					</div>
 				</div>
 			</footer>

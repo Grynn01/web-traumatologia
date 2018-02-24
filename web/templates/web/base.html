@@ -1,42 +1,41 @@
 {% load static %}
 <!DOCTYPE HTML>
 <!--
-	TEMPLATED
+	Industrious by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<html lang="es">
-
-
+<html>
 	<head>
 		<title>Preservación de Cadera Chile</title>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link rel="stylesheet" href="{% static 'web/assets/css/skel.css' %}" />
-        <link rel="stylesheet" href="{% static 'web/assets/css/style.css' %}" />
-        <link rel="stylesheet" href="{% static 'web/assets/css/style-large.css' %}" />
-
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+        <link rel="stylesheet" href="{% static 'web/assets/css/main.css' %}" />
 	</head>
-
-
-	<body>
+	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
-                <h1><a href="{% url 'index' %}" class="logo">Inicio</a></h1>
-                <nav id="nav">
-                    <ul>
-                        <li><a href="{% url 'info' %}">Informacion</a></li>
+				<a class="logo" href="{% url 'index' %}">Inicio</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'info' %}">Informacion</a></li>
                         <li><a href="{% url 'itinerario' %}">Itinerario</a></li>
                         <li><a href="{% url 'signup new' %}">Inscripcion</a></li>
                         <li><a href="{% url 'contact new' %}">Contacto</a></li>
-                    </ul>
-                </nav>
-			</header>
+				</ul>
+			</nav>
 
         <!-- insertion -->
-         <div class="content container">
+         <div class="content">
             <div class="row">
                 <div class="col-md-300">
                     {% block content %}
@@ -47,29 +46,29 @@
 
 		<!-- Footer -->
 			<footer id="footer">
-				<div class="container">
-					<div class="row">
-						<section class="4u$ 12u$(medium) 12u$(large) ">
-							<ul class="icons big">
+				<div class="inner">
+					<div class="content">
+                        <section>
+							<ul class="icons">
                                 <li><h4>Contactanos</h4></li>
-                                <li><a href="#" class="icon fa-envelope"><span class="label">Facebook</span></a></li>
+                                <li><a href="{% url 'contact new' %}" class="icon fa-envelope"><span class="label">Facebook</span></a></li>
 								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 							</ul>
 						</section>
 					</div>
-					<ul class="copyright">
-						<li>&copy; All rights reserved.</li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
+					<div class="copyright">
+						&copy; Matias Ramirez. Photos and CSS <a href="https://unsplash.co">Unsplash</a>.
+					</div>
 				</div>
 			</footer>
 
-        <!-- Scripts -->
+		<!-- Scripts -->
+			<script src="{% static 'web/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'web/assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'web/assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'web/assets/js/util.js' %}"></script>
+			<script src="{% static 'web/assets/js/main.js' %}"></script>
 
-            <script src="{% static 'web/assets/js/jquery.min.js' %}"></script>
-            <script src="{% static 'web/assets/js/skel.min.js' %}"></script>
-            <script src="{% static 'web/assets/js/skel-layers.min.js' %}"></script>
-            <script src="{% static 'web/assets/js/init.js' %}"></script>
 	</body>
 </html>
