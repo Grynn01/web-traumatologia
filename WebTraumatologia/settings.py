@@ -25,7 +25,7 @@ SECRET_KEY = '1^j(97qm-q&w5_f!!+fq18wk@j0g!-8ii87e^dzjub-1pqs$^w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['grynn.pythonanywhere.com']
 
 
 # Application definition
