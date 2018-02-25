@@ -1,32 +1,19 @@
 {% extends 'web/base.html' %}
 {% block content %}
-    <br><br>
-    <h3>Inscripcion</h3>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="reset" class="button special">Borrar</button>
-        <button type="submit" class="button special">Inscribirse</button>
-    </form>
-
+<!-- Main -->
+        <section class="wrapper">
+            <div class="inner">
+                <div class="content">
+                    <header>
+                        <h2>Inscripcion</h2>
+                    </header>
+                    <p>Completa los siguientes datos para realizar tu inscripcion</p>
+                    <form method="POST" class="post-form">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="reset" class="button special">Borrar</button>
+                        <button type="submit" class="button special">Inscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 {% endblock %}
-
-
-<!-- Form
-    <h3>Form</h3>
-
-    <form method="post" action="#">
-        <div class="row uniform">
-            <div class="6u 12u$(xsmall)">
-                <input type="text" name="name" id="name" value="" placeholder="Name" />
-            </div>
-            <div class="6u$ 12u$(xsmall)">
-                <input type="email" name="email" id="email" value="" placeholder="Email" />
-            </div>
-            <div class="12u$">
-                <ul class="actions">
-                    <li><input type="submit" value="Send Message" /></li>
-                    <li><input type="reset" value="Reset" class="alt" /></li>
-                </ul>
-            </div>
-        </div>
-    </form>-->

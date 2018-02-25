@@ -1,10 +1,18 @@
 {% extends 'web/base.html' %}
 {% block content %}
-    <br><br>
-    <h3>Contacto</h3>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="button special">Enviar</button>
-    </form>
-
+<!-- Main -->
+        <section class="wrapper">
+            <div class="inner">
+                <div class="content">
+                    <header>
+                        <h2>Contacto</h2>
+                    </header>
+                    <p>Complete los campos y escriba su mensaje</p>
+                    <form method="POST" class="post-form">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="button special">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 {% endblock %}
