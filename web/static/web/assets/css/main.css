@@ -335,14 +335,13 @@ button,
   input[type="button"]:hover,
   button:hover,
   .button:hover {
-    box-shadow: inset 0 0 0 1px #ce1b28;
-    color: #ce1b28 !important; }
+    background-color: #ceff99;  }
     input[type="submit"]:hover:active,
     input[type="reset"]:hover:active,
     input[type="button"]:hover:active,
     button:hover:active,
     .button:hover:active {
-      background-color: rgba(206, 27, 40, 0.25); }
+      background-color: transparent;  }
   input[type="submit"].primary,
   input[type="reset"].primary,
   input[type="button"].primary,
@@ -703,7 +702,7 @@ table.alt tbody tr td {
     height: 100%;
     padding: 3rem;
     text-align: center; }
-  .highlights .content2 {
+  .highlights .content {
     border-radius: 4px;
     height: 100%;
     padding: 3rem;
