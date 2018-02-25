@@ -22,6 +22,3 @@ class MessageForm(forms.ModelForm):
             'nombre': forms.TextInput(attrs={'placeholder': 'ej: Marcelo Gonzalez'}),
             'email': forms.TextInput(attrs={'placeholder': 'ej: marcelogon@gmail.com'}),
         }
-
-
-

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.contenttypes',
     'web.apps.SignupConfig',
 ]
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'WebTraumatologia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'WebTraumatologia.db',
+        'NAME': '/home/Grynn/web-traumatologia/WebTraumatologia.db',
     }
 }
 
