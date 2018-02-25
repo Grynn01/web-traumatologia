@@ -494,7 +494,7 @@ input[type="radio"] + label:before {
   opacity: 1.0; }
 
 label {
-  color: #555555; }
+  color: rgba(0, 0, 0, 0.25); }
 
 input[type="text"],
 input[type="password"],
