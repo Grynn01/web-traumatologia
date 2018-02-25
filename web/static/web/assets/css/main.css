@@ -702,7 +702,7 @@ table.alt tbody tr td {
     height: 100%;
     padding: 3rem;
     text-align: center; }
-  .highlights .content {
+  .highlights .content2 {
     border-radius: 4px;
     height: 100%;
     padding: 3rem;
@@ -2651,6 +2651,9 @@ body {
   #heading table.alt tbody tr td {
     border-color: rgba(255, 255, 255, 0.25); }
   #heading .highlights .content {
+    background: #111111;
+    box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.025); }
+  #heading .highlights .content2 {
     background: #111111;
     box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.025); }
   #heading .testimonials .content {
