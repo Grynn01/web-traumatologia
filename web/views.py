@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .form import AssistantForm, MessageForm
+from .models import *
+from .form import *
 
 # Create your views here.
 
@@ -17,15 +18,25 @@ def itinerario(request):
 
 
 def signup_new(request):
+    cursos = Course.objects.filter(activo=True)
     if request.method == "POST":
-        form = AssistantForm(request.POST)
-        if form.is_valid():
-            assist = form.save(commit=False)
-            assist.save()
-            return redirect('signup done')
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        telefono = request.POST['telefono']
+        email = request.POST['email']
+        area_de_trabajo = request.POST['area_de_trabajo']
+        lugar_de_trabajo = request.POST['lugar_de_trabajo']
+        asistente, new_asistente = Assistant.objects.update_or_create(nombres=nombres, apellidos=apellidos,
+                                                                      telefono=telefono, email=email,
+                                                                      area_de_trabajo=area_de_trabajo,
+                                                                      lugar_de_trabajo=lugar_de_trabajo)
+        curso = Course.objects.get(id=request.POST['curso_elegido'])
+
+        inscripcion, new_inscripcion = Inscription.objects.update_or_create(asistente=asistente, curso=curso)
+
+        return redirect('signup done')
     else:
-        form = AssistantForm()
-    return render(request, 'web/signup_new.html', {'form': form})
+        return render(request, 'web/signup_new.html', {'cursos': cursos})
 
 
 def signup_done(request):

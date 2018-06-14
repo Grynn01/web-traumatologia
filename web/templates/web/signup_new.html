@@ -7,11 +7,42 @@
                     <header>
                         <h2>Inscripcion</h2>
                     </header>
-                    <p>Completa los siguientes datos para realizar tu inscripcion</p>
-                    <form method="POST" class="post-form">{% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="reset" class="button special">Borrar</button>
-                        <button type="submit" class="button special">Inscribirse</button>
+                    <form action="{% url 'signup new' %}" method="post">
+                        <div class="row gtr-uniform">
+                            <div class="col-12">
+                                {% csrf_token %}
+                                <select name = "curso_elegido">
+                                <option value="">- Seleccionar Curso -</option>
+                                {% for curso in cursos %}
+                                    <option value="{{curso.id}}">{{ curso.nombre }}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-4 col-6">
+                                <input type="text" name="nombres" id="nombres" placeholder="Nombres"/>
+                            </div>
+                            <div class="col-4 col-6">
+                                <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"/>
+                            </div>
+                            <div class="col-4 col-6">
+                                <input type="text" name="telefono" id="telefono" placeholder="Telefono"/>
+                            </div>
+                            <div class="col-4 col-6">
+                                <input type="email" name="email" id="email" placeholder="e-mail"/>
+                            </div>
+                            <div class="col-4 col-6">
+                                <input type="text" name="area_de_trabajo" id="area_de_trabajo" placeholder="Area de Trabajo"/>
+                            </div>
+                            <div class="col-4 col-6">
+                                <input type="text" name="lugar_de_trabajo" id="lugar_de_trabajo" placeholder="Lugar de Trabajo"/>
+                            </div>
+                            <div class="col-12">
+                                <ul class="actions">
+                                    <li><button type="reset" class="button special">Borrar</button></li>
+                                    <li><button type="submit" class="button special">Inscribirse</button></li>
+                                </ul>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

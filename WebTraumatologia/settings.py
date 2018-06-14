@@ -25,7 +25,7 @@ SECRET_KEY = '1^j(97qm-q&w5_f!!+fq18wk@j0g!-8ii87e^dzjub-1pqs$^w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['grynn.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web.apps.SignupConfig',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'WebTraumatologia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/Grynn/web-traumatologia/WebTraumatologia.db',
+        'NAME': 'WebTraumatologia.db',
     }
 }
 
