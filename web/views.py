@@ -6,7 +6,7 @@ from .form import *
 
 
 def index(request):
-    return render(request, 'web/indexres.html')
+    return render(request, 'web/html_boot/index2.html')
 
 
 def info(request):
