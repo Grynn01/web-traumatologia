@@ -230,11 +230,11 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#cipca">CIPCA</a></li>
                 <li><a href="#curso">Curso</a></li>
                 <li><a href="#programa">Programa</a></li>
                 <li><a href="#inscripcion">Inscripcion</a></li>
                 <li><a href="#patrocinan">Patrocinan</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
     </div>
@@ -247,7 +247,7 @@
 <br>
 <br>
 <!-- Cipca -->
-<div id="cipca" class="container-fluid">
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm-4">
             <div class="text-center"><h2>¿Qué es CIPCA?</h2>
@@ -266,32 +266,31 @@
 
 <!-- Curso -->
 <div id="curso" class="container-fluid bg-grey">
+    <div class="row text-center">
+        <h2>Curso</h2><br>
+    </div>
     <div class="row">
-        <div class="col-sm-2 text-justify">
+        <div class="col-sm-4">
+            <br>
             <span class="glyphicon glyphicon-comment logo slideanim"></span>
         </div>
-        <div class="col-sm-4 text-justify">
-            <h2>Curso</h2><br>
+        <div class="col-sm-4 text-left">
             <h4><strong>Fecha:</strong> Miércoles 5 y Jueves 06 de Septiembre 2018.</h4>
             <h4><strong>Hora:</strong> Hora 8:00 am- 17:00 </h4>
             <h4><strong>Lugar:</strong> Hospital Dra. Eloísa Díaz. <br>Froilán Roa 6542, La Florida,
                 Santiago de Chile.</h4>
-            <h4><strong>Valor:</strong>
-                <li>Medicos: $80.000</li>
-                <li>Becados: $50.000</li>
-                <li>Medicos Socios SCHOT: $60.000</li>
+            <h4><strong>Valor:</strong><br>
+                Medicos: $80.000<br>
+                Becados: $50.000<br>
+                Medicos Socios SCHOT: $60.000
             </h4>
         </div>
         <div class="col-sm-4 text-justify">
-            <h4>El programa se realiza en español y la estructura del curso se contempla de la siguiente manera:</h4>
-            <h4><li>Módulos de charlas</li>
-            <li>Crossfire</li>
-            <li>Mesas redondas</li>
-            <li>Casos clínicos</li>
-            <li>Módulos de charlas</li></h4>
+            <h4>El programa se realiza en español y la estructura del curso se contempla de módulos de charlas,
+                crossfire, mesas redondas, casos clínicos, módulos de charlas</h4>
             <h4>No se considera sistema de traducción.</h4>
-            <h4>Cada charla tiene una duracion de 15 a 20 min. con un espacio de preguntas.</h4>
-            <h4>Se realizaran dos pausas coffe break y una pausa de almuerzo cada dia.</h4>
+            <h4>Cada charla tiene una duracion de 15 a 20 min. con un espacio de preguntas.
+                Se realizaran dos pausas coffe break y una pausa de almuerzo cada dia.</h4>
         </div>
     </div>
 </div>
@@ -299,22 +298,28 @@
 <!-- Programa -->
 <div id="programa" class="container-fluid">
     <div class="row">
-        <div class="text-center"><h2>Programa</h2></div>
-
-        <div class="col-sm-6 text-center">
-
-            <h4><strong>Contenidos:</strong></h4>
-            <h4><li>Secuelas de displasia</li>
-            <li>Epifisiolisis</li>
-            <li>Perthes</li>
-            <li>Pellizcamiento</li>
-            <li>Evolución de preservación de cadera</li>
-            <li>PAO</li>
-            <li>OTT pelvis</li>
-            <li>Prótesis</li>
-            <li>Artroscopia de cadera</li>
-            <li>Rehabilitación</li></h4>
+        <div class="text-center">
+            <h2>Programa</h2>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div class="text-justify">
+                <h4><strong>Contenidos:</strong></h4>
+                <h4><li>Secuelas de displasia</li>
+                <li>Epifisiolisis</li>
+                <li>Perthes</li>
+                <li>Pellizcamiento</li>
+                <li>Evolución de preservación de cadera</li>
+                <li>PAO</li>
+                <li>OTT pelvis</li>
+                <li>Prótesis</li>
+                <li>Artroscopia de cadera</li>
+                <li>Rehabilitación</li></h4>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
         <!--
         <div class="col-sm-4 text-center">
             <h4><strong>Objetivos generales</strong></h4>
@@ -331,7 +336,9 @@
                 de especialistas expertos en dicha técnicas., abiertas o artroscopicas </h4>
             </div>
         </div> -->
-        <div class="col-sm-6 text-center">
+        <div class="col-sm-4">
+            <br>
+            <br>
             <span class="glyphicon glyphicon-calendar logo slideanim"></span>
         </div>
     </div>
@@ -467,7 +474,6 @@
                         <div class="form-group">
                             {% csrf_token %}
                             <select name = "curso_elegido">
-                            <option value="">- Seleccionar Curso -</option>
                             {% for curso in cursos %}
                                 <option value="{{curso.id}}">{{ curso.nombre }}</option>
                             {% endfor %}
@@ -500,7 +506,6 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   </div>
                 </div>
-
               </div>
             </div>
         </div>
@@ -619,6 +624,7 @@
     </div>
   </div>
 </div>
+-->
 
 <!-- Container (Contact Section)
 <div id="contact" class="container-fluid bg-grey">
@@ -652,17 +658,19 @@
 -->
 
 <!-- Add Google Maps -->
-<div id="googleMap" style="height:400px;width:100%;"></div>
+<div id="map" style="width:100%;height:500px"></div>
+
 <script>
 function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
+  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTZMbmPmfj8E_XiEpOmEOcJX3wpsuU_dk&callback=myMap"></script>
 <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
