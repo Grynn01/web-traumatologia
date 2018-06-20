@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .form import *
+
 
 # Create your views here.
 
 
 def index(request):
     cursos = Course.objects.filter(activo=True)
-    return render(request, 'web/html_boot/index2.html', {'cursos': cursos})
+    return render(request, 'web/html_boot/index.html', {'cursos': cursos})
 
 
 def info(request):
@@ -42,19 +42,19 @@ def signup_new(request):
 
 def signup_done(request):
     cursos = Course.objects.filter(activo=True)
-    return render(request, 'web/html_boot/ok.html', {'cursos': cursos})
+    return render(request, 'web/html_boot/signup_done.html', {'cursos': cursos})
 
 
 def contact_new(request):
+    cursos = Course.objects.filter(activo=True)
     if request.method == "POST":
-        form = MessageForm(request.POST)
-        if form.is_valid():
-            message = form.save(commit=False)
-            message.save()
-            return redirect('contact done')
+        nombre = request.POST['nombre']
+        email = request.POST['email']
+        mensaje = request.POST['mensaje']
+        contacto, new_contacto = Message.objects.update_or_create(nombre=nombre, email=email, mensaje=mensaje)
+        return redirect('contact done')
     else:
-        form = MessageForm()
-    return render(request, 'web/contact_new.html', {'form': form})
+        return render(request, 'web/s_new.html', {'cursos': cursos})
 
 
 def contact_done(request):

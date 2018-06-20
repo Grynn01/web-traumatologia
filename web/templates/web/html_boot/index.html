@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -55,6 +56,7 @@
   .logo-small {
       color: #03A9F4;
       font-size: 50px;
+      margin-right: 40px;
   }
   .logo {
       color: #03A9F4;
@@ -213,6 +215,9 @@
         font-size: 150px;
     }
   }
+  .modal-dialog {
+    padding-top: 5%;
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -626,55 +631,65 @@
 </div>
 -->
 
-<!-- Container (Contact Section)
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+
+<!-- Add Google Maps -->
+<div id="ubicacion" class="container-fluid bg-grey">
+    <div class="row text-center">
+        <h2>Ubicacion</h2><br>
     </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <br><br><br><br><br>
+            <span class="glyphicon glyphicon-map-marker logo slideanim"></span>
         </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+
+        <div id="map" class="col-sm-8 text-center" style="height:500px">
+            <script>
+            function myMap() {
+              var myCenter = new google.maps.LatLng(-33.5140438,-70.5999033);
+              var mapCanvas = document.getElementById("map");
+              var mapOptions = {center: myCenter, zoom: 16};
+              var map = new google.maps.Map(mapCanvas, mapOptions);
+              var marker = new google.maps.Marker({position:myCenter});
+              marker.setMap(map);
+            }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTZMbmPmfj8E_XiEpOmEOcJX3wpsuU_dk&callback=myMap"></script>
         </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+    </div>
+</div>
+
+
+<!-- Container (Contact Section)-->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">Contacto</h2>
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <h4>Siguenos en redes sociales</h4>
+        <span><a href="#" class="fa fa-facebook logo-small"></a></span>
+        <span><a href="#" class="fa fa-twitter logo-small"></a></span>
+    </div>
+
+    <div class="col-sm-8 slideanim">
+        <form action="{% url 'contact new' %}" method="post">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" required>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            </div>
+          </div>
+          <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Mensaje" rows="5"></textarea><br>
+        </form>
       <div class="row">
         <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
+          <button class="btn btn-default pull-right" type="submit">Enviar</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
--->
-
-<!-- Add Google Maps -->
-<div id="map" style="width:100%;height:500px"></div>
-
-<script>
-function myMap() {
-  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 5};
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTZMbmPmfj8E_XiEpOmEOcJX3wpsuU_dk&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
