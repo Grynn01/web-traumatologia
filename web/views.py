@@ -6,7 +6,8 @@ from .form import *
 
 
 def index(request):
-    return render(request, 'web/html_boot/index2.html')
+    cursos = Course.objects.filter(activo=True)
+    return render(request, 'web/html_boot/index2.html', {'cursos': cursos})
 
 
 def info(request):
@@ -40,7 +41,8 @@ def signup_new(request):
 
 
 def signup_done(request):
-    return render(request, 'web/signup_done.html')
+    cursos = Course.objects.filter(activo=True)
+    return render(request, 'web/html_boot/ok.html', {'cursos': cursos})
 
 
 def contact_new(request):
