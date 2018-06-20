@@ -24,6 +24,8 @@ class CourseAdmin(admin.ModelAdmin):
     ordering = ('-fecha',)
     search_fields = ['nombre', 'fecha']
 
+"""
+
 
 class InscriptionResource(resources.ModelResource):
     asistente = fields.Field(
@@ -58,10 +60,14 @@ class InscriptionAdmin(ImportExportModelAdmin):
     list_filter = ('asistente', 'curso')
     ordering = ('-date',)
     resource_class = InscriptionResource
+    
+    
+admin.site.register(Inscription, InscriptionAdmin)
 
+"""
 
 admin.site.register(Assistant, AssistantAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(Course, CourseAdmin)
-admin.site.register(Inscription, InscriptionAdmin)
+
 
