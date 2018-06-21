@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -135,13 +135,14 @@
       background-color: #03A9F4;
       z-index: 9999;
       border: 0;
-      font-size: 12px !important;
+      font-size: 17px !important;
       line-height: 1.42857143 !important;
-      letter-spacing: 4px;
+      letter-spacing: 1px;
       border-radius: 0;
       font-family: Montserrat, sans-serif;
   }
   .navbar li a, .navbar .navbar-brand {
+      font-size: 18px !important;
       color: #fff !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -220,7 +221,7 @@
     padding-top: 5%;
 }
   .navbar-text {
-      color: #ffffff !important;
+  color: #ffffff !important;
   font-size: 18px;
   margin-top: -5px;
   margin-bottom: -5px;
@@ -245,34 +246,35 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#curso">Curso</a></li>
+                <li><a href="#contenido">Contenido</a></li>
                 <li><a href="#programa">Programa</a></li>
                 <li><a href="#inscripcion">Inscripcion</a></li>
                 <li><a href="#patrocinan">Patrocinan</a></li>
+                <li><a href="#ubicacion">Ubicacion</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<br><br>
+<br><br><br>
 <div class="container">
     <img src="{% static 'web/images/banner2.png' %}" class="img-responsive" alt="Banner">
 </div>
-<br>
-<br>
+
 <!-- Cipca -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-lg-4">
             <div class="text-center"><h2>¿Qué es CIPCA?</h2>
             </div>
         </div>
-        <div class="col-sm-4 text-justify">
+        <div class="col-lg-4 text-justify">
             <h4>
                 CIPCA (Curso Internacional de Preservacion de Cadera) es un curso a realizar este anio 2018 por un grupo
                 de traumatologos chilenos, el cual se enfoca en temas de la cadera.</h4>
         </div>
-        <div class="col-sm-4 text-center">
+        <div class="col-lg-4 text-center">
             <span class="glyphicon glyphicon-question-sign logo"></span>
         </div>
     </div>
@@ -284,11 +286,11 @@
         <h2>Curso</h2><br>
     </div>
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-lg-4">
             <br>
             <span class="glyphicon glyphicon-comment logo slideanim"></span>
         </div>
-        <div class="col-sm-4 text-left">
+        <div class="col-lg-4 text-left">
             <h4>Miércoles 5 y Jueves 06 de Septiembre 2018.</h4>
             <h4>8:00 am- 17:00 </h4>
             <h4><strong>Lugar:</strong> Hospital Dra. Eloísa Díaz. <br>Froilán Roa 6542, La Florida,
@@ -299,7 +301,7 @@
                 Medicos Socios SCHOT: $60.000
             </h4>
         </div>
-        <div class="col-sm-4 text-justify">
+        <div class="col-lg-4 text-justify">
             <h4>El programa se realiza en español y la estructura del curso se contempla de módulos de charlas,
                 crossfire, mesas redondas, casos clínicos, módulos de charlas</h4>
             <h4>No se considera sistema de traducción.</h4>
@@ -309,18 +311,17 @@
     </div>
 </div>
 
-<!-- Programa -->
-<div id="programa" class="container-fluid">
+<!-- Contenido -->
+<div id="contenido" class="container-fluid">
     <div class="row">
         <div class="text-center">
-            <h2>Programa</h2>
+            <h2>Contenido</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-4">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
             <div class="text-justify">
-                <h4><strong>Contenidos:</strong></h4>
                 <h4><li>Secuelas de displasia</li>
                 <li>Epifisiolisis</li>
                 <li>Perthes</li>
@@ -333,9 +334,9 @@
                 <li>Rehabilitación</li></h4>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-lg-2"></div>
         <!--
-        <div class="col-sm-4 text-center">
+        <div class="col-lg-4 text-center">
             <h4><strong>Objetivos generales</strong></h4>
             <div class="text-justify">
                 <h4>El objetivo es realizar un curso de divulgación científica especializada con faculty
@@ -350,14 +351,23 @@
                 de especialistas expertos en dicha técnicas., abiertas o artroscopicas </h4>
             </div>
         </div> -->
-        <div class="col-sm-4">
+        <div class="col-lg-4">
             <br>
             <br>
             <span class="glyphicon glyphicon-calendar logo slideanim"></span>
         </div>
     </div>
+</div>
+
+<!-- Programa -->
+<div id="programa" class="container-fluid bg-grey">
     <div class="row">
-        <div class="col-sm-6 text-center">
+        <div class="text-center">
+            <h2>Programa</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 text-center">
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -418,7 +428,7 @@
             </table>
 
         </div>
-        <div class="col-sm-6 text-center">
+        <div class="col-lg-6 text-center">
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -462,12 +472,12 @@
 </div>
 
 <!-- Inscripcion -->
-<div id="inscripcion" class="container-fluid bg-grey">
+<div id="inscripcion" class="container-fluid">
     <div class="row">
-        <div class="col-sm-6 text-center">
+        <div class="col-lg-6 text-center">
             <span class="glyphicon glyphicon-check logo slideanim"></span>
         </div>
-        <div class="col-sm-6 text-justify">
+        <div class="col-lg-6 text-justify">
             <h2>Inscripcion</h2>
             <h4>Inscribete para participar con nosotros</h4><br>
             <!-- Trigger the modal with a button -->
@@ -480,7 +490,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+                    <button type="button" class="close" data-dilgiss="modal">&times;</button><br>
                     <h4 class="modal-title">Inscripcion</h4>
                   </div>
                   <div class="modal-body">
@@ -527,48 +537,84 @@
 </div>
 
 
+<!-- Add Google Maps -->
+<div id="ubicacion" class="container-fluid bg-grey">
+    <div class="row text-center">
+        <h2>Ubicacion</h2><br>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 text-center">
+            <br><br><br><br><br>
+            <span class="glyphicon glyphicon-map-marker logo slideanim"></span>
+        </div>
+
+        <div id="map" class="col-lg-8 text-center" style="height:500px">
+            <script>
+            function myMap() {
+              var myCenter = new google.maps.LatLng(-33.5140438,-70.5999033);
+              var mapCanvas = document.getElementById("map");
+              var mapOptions = {center: myCenter, zoom: 16};
+              var map = new google.maps.Map(mapCanvas, mapOptions);
+              var marker = new google.maps.Marker({position:myCenter});
+              marker.setMap(map);
+            }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTZMbmPmfj8E_XiEpOmEOcJX3wpsuU_dk&callback=myMap"></script>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Patrocinan -->
-<div id="patrocinan" class="container-fluid text-center">
-  <h2>Patrocinadores</h2><br>
-
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-            <div class="container">
-                <img src="{% static 'web/images/sponsor1.jpeg' %}" class="img-responsive" alt="Sponsor">
-            </div>
+<div id="patrocinan" class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+            <h2>Patrocinan</h2>
+        </div>
+    </div>
+    <!-- Primera fila -->
+   <div class="row">
+      <div class="col-lg-4">
+        <div class="thumbnail">
+          <a href="https://www.orthopediatrics.com/">
+            <img src="{% static 'web/images/sponsor1.jpeg' %}" style="width:100%">
+          </a>
+        </div>
       </div>
-      <div class="item">
-          <div class="container">
-              <img src="{% static 'web/images/sponsor2.jpeg' %}" class="img-responsive" alt="Sponsor">
-          </div>
+      <div class="col-lg-4">
+        <div class="thumbnail">
+          <a href="https://www.grupoarenys.cl/arenysmed/#!/home">
+            <img src="{% static 'web/images/sponsor2.jpeg' %}" style="width:80%">
+          </a>
+        </div>
       </div>
-      <div class="item">
-          <div class="container">
-             <img src="{% static 'web/images/sponsor3.jpeg' %}" class="img-responsive" alt="Sponsor">
-          </div>
+      <div class="col-lg-4">
+        <div class="thumbnail">
+          <a href="https://www.savalcorp.com/es/">
+            <img src="{% static 'web/images/sponsor4.jpeg' %}"  style="width:45%">
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+    <!-- Segunda fila -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="thumbnail">
+          <a href="http://www.promedon.com/cl">
+            <img src="{% static 'web/images/sponsor3.jpeg' %}" style="width:80%">
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="thumbnail">
+          <a href="https://www.depuysynthes.com">
+            <img src="{% static 'web/images/sponsor5.jpeg' %}" style="width:90%">
+          </a>
+        </div>
+      </div>
+    </div>
 </div>
 
 <!--
@@ -579,7 +625,7 @@
     <h4>Choose a payment plan that works for you</h4>
   </div>
   <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
+    <div class="col-lg-4 col-lg-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
           <h1>Basic</h1>
@@ -598,7 +644,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 col-xs-12">
+    <div class="col-lg-4 col-lg-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
           <h1>Pro</h1>
@@ -617,7 +663,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 col-xs-12">
+    <div class="col-lg-4 col-lg-12">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
           <h1>Premium</h1>
@@ -641,58 +687,30 @@
 -->
 
 
-<!-- Add Google Maps -->
-<div id="ubicacion" class="container-fluid bg-grey">
-    <div class="row text-center">
-        <h2>Ubicacion</h2><br>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 text-center">
-            <br><br><br><br><br>
-            <span class="glyphicon glyphicon-map-marker logo slideanim"></span>
-        </div>
-
-        <div id="map" class="col-sm-8 text-center" style="height:500px">
-            <script>
-            function myMap() {
-              var myCenter = new google.maps.LatLng(-33.5140438,-70.5999033);
-              var mapCanvas = document.getElementById("map");
-              var mapOptions = {center: myCenter, zoom: 16};
-              var map = new google.maps.Map(mapCanvas, mapOptions);
-              var marker = new google.maps.Marker({position:myCenter});
-              marker.setMap(map);
-            }
-            </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTZMbmPmfj8E_XiEpOmEOcJX3wpsuU_dk&callback=myMap"></script>
-        </div>
-    </div>
-</div>
-
-
-<!-- Container (Contact Section)-->
-<div id="contact" class="container-fluid bg-grey">
+<!-- Contacto-->
+<div id="contacto" class="container-fluid bg-grey">
   <h2 class="text-center">Contacto</h2>
   <div class="row">
-    <div class="col-sm-4 text-center">
+    <div class="col-lg-4 text-center">
       <h4>Siguenos en redes sociales</h4>
         <span><a href="#" class="fa fa-facebook logo-small"></a></span>
         <span><a href="#" class="fa fa-twitter logo-small"></a></span>
     </div>
 
-    <div class="col-sm-8 slideanim">
+    <div class="col-lg-8 slideanim">
         <form action="{% url 'contact new' %}" method="post">
           <div class="row">
-            <div class="col-sm-6 form-group">
+            <div class="col-lg-6 form-group">
               <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" required>
             </div>
-            <div class="col-sm-6 form-group">
+            <div class="col-lg-6 form-group">
               <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
             </div>
           </div>
           <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Mensaje" rows="5"></textarea><br>
         </form>
       <div class="row">
-        <div class="col-sm-12 form-group">
+        <div class="col-lg-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Enviar</button>
         </div>
       </div>
@@ -708,7 +726,7 @@
 
 <script>
 $(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
+  // Add lgooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
@@ -718,7 +736,7 @@ $(document).ready(function(){
       // Store hash
       var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
+      // Using jQuery's animate() method to add lgooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
         scrollTop: $(hash).offset().top
