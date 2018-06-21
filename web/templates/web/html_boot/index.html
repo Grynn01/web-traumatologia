@@ -152,6 +152,7 @@
       border-color: transparent;
       color: #fff !important;
   }
+  /*
   .navbar-collapse.collapse {
      display: block!important;
     }
@@ -166,7 +167,7 @@
 
     .navbar-right {
       float: right!important;
-    }
+    }*/
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
@@ -218,6 +219,16 @@
   .modal-dialog {
     padding-top: 5%;
 }
+  .navbar-text {
+      color: #ffffff !important;
+  font-size: 18px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  padding-bottom: 0;
+  text-align: center;
+  width: 30%;
+
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -227,9 +238,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <p class="navbar-text">Menu</p>
             </button>
             <a class="navbar-brand" href="#myPage">CIPCA</a>
         </div>
@@ -245,7 +254,7 @@
     </div>
 </nav>
 
-<br><br><br><br><br>
+<br><br>
 <div class="container">
     <img src="{% static 'web/images/banner2.png' %}" class="img-responsive" alt="Banner">
 </div>
@@ -280,8 +289,8 @@
             <span class="glyphicon glyphicon-comment logo slideanim"></span>
         </div>
         <div class="col-sm-4 text-left">
-            <h4><strong>Fecha:</strong> Miércoles 5 y Jueves 06 de Septiembre 2018.</h4>
-            <h4><strong>Hora:</strong> Hora 8:00 am- 17:00 </h4>
+            <h4>Miércoles 5 y Jueves 06 de Septiembre 2018.</h4>
+            <h4>8:00 am- 17:00 </h4>
             <h4><strong>Lugar:</strong> Hospital Dra. Eloísa Díaz. <br>Froilán Roa 6542, La Florida,
                 Santiago de Chile.</h4>
             <h4><strong>Valor:</strong><br>
