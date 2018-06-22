@@ -527,7 +527,7 @@
                     <form action="{% url 'signup new' %}" method="post">
                         <div class="form-group">
                             {% csrf_token %}
-                            <select name = "curso_elegido">
+                            <select class="form-control" name = "curso_elegido">
                             {% for curso in cursos %}
                                 <option value="{{curso.id}}">{{ curso.nombre }}</option>
                             {% endfor %}
