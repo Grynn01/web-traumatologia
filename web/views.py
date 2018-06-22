@@ -10,14 +10,6 @@ def index(request):
     return render(request, 'web/html_boot/index.html', {'cursos': cursos})
 
 
-def info(request):
-    return render(request, 'web/info.html')
-
-
-def itinerario(request):
-    return render(request, 'web/itinerario.html')
-
-
 def signup_new(request):
     cursos = Course.objects.filter(activo=True)
     if request.method == "POST":
