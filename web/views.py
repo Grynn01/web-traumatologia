@@ -7,7 +7,7 @@ from .models import *
 
 def index(request):
     cursos = Course.objects.filter(activo=True)
-    return render(request, 'web/html_boot/index.html', {'cursos': cursos})
+    return render(request, 'web/index.html', {'cursos': cursos})
 
 
 def signup_new(request):
@@ -29,12 +29,12 @@ def signup_new(request):
 
         return redirect('signup done')
     else:
-        return render(request, 'web/signup_new.html', {'cursos': cursos})
+        return render(request, 'web/index.html', {'cursos': cursos})
 
 
 def signup_done(request):
     cursos = Course.objects.filter(activo=True)
-    return render(request, 'web/html_boot/signup_done.html', {'cursos': cursos})
+    return render(request, 'web/signup_done.html', {'cursos': cursos})
 
 
 def contact_new(request):
@@ -46,8 +46,9 @@ def contact_new(request):
         contacto, new_contacto = Message.objects.update_or_create(nombre=nombre, email=email, mensaje=mensaje)
         return redirect('contact done')
     else:
-        return render(request, 'web/s_new.html', {'cursos': cursos})
+        return render(request, 'web/index.html', {'cursos': cursos})
 
 
 def contact_done(request):
-    return render(request, 'web/contact_done.html')
+    cursos = Course.objects.filter(activo=True)
+    return render(request, 'web/contact_done.html',  {'cursos': cursos})

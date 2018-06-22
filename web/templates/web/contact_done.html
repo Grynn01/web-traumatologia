@@ -1,14 +1,730 @@
-{% extends 'web/base.html' %}
-{% block content %}
-<!-- Main -->
-        <section class="wrapper">
-            <div class="inner">
-                <div class="content">
-                    <header>
-                        <h2>Mensaje Enviado</h2>
-                    </header>
-                    <p>Gracias por comunicarte con nosotros, reibiras una respuesta a tu mensaje lo mas pronto posible</p>
-                </div>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CIPCA 2018</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }
+  h6 {
+      font-size: 14px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }
+  .jumbotron {
+      background-color: #03A9F4;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .bg-white {
+      background-color: #fff;
+  }
+  .logo-small {
+      color: #03A9F4;
+      font-size: 50px;
+      margin-right: 40px;
+  }
+  .logo {
+      color: #03A9F4;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #03A9F4;
+  }
+  .carousel-indicators li {
+      border-color: #03A9F4;
+  }
+  .carousel-indicators li.active {
+      background-color: #03A9F4;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #03A9F4;
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #03A9F4;
+      background-color: #fff !important;
+      color: #03A9F4;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #03A9F4 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #03A9F4;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #03A9F4;
+      z-index: 9999;
+      border: 0;
+      font-size: 17px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 1px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      font-size: 18px !important;
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #03A9F4 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  /*
+  .navbar-collapse.collapse {
+     display: block!important;
+    }
+
+    .navbar-nav>li, .navbar-nav {
+      float: left !important;
+    }
+
+    .navbar-nav.navbar-right:last-child {
+      margin-right: -15px !important;
+    }
+
+    .navbar-right {
+      float: right!important;
+    }*/
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #03A9F4;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  .modal-dialog {
+    padding-top: 5%;
+}
+  .navbar-text {
+  color: #ffffff !important;
+  font-size: 18px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  padding-bottom: 0;
+  text-align: center;
+  width: 30%;
+
+}
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<!-- Navigation bar-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <p class="navbar-text">Menu</p>
+            </button>
+            <a class="navbar-brand" href="#myPage">CIPCA</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#curso">Curso</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#contenido">Contenido</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#programa">Programa</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#invitados">Invitados</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#inscripcion">Inscripcion</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#patrocinan">Patrocinan</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#ubicacion">Ubicacion</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br><br><br>
+<div class="container">
+    <img src="{% static 'web/images/banner2.png' %}" class="img-responsive" alt="Banner">
+</div>
+
+
+<!-- Cipca -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="text-center"><h2>¿Qué es CIPCA?</h2>
             </div>
-        </section>
-{% endblock %}
+        </div>
+        <div class="col-lg-4 text-justify">
+            <h4>
+                CIPCA (Curso Internacional de Preservacion de Cadera) es un curso a realizar este anio 2018 por un grupo
+                de traumatologos chilenos, el cual se enfoca en temas de la cadera.</h4>
+        </div>
+        <div class="col-lg-4 text-center">
+            <span class="glyphicon glyphicon-question-sign logo"></span>
+        </div>
+    </div>
+</div>
+
+
+<!-- Curso -->
+<div id="curso" class="container-fluid bg-grey">
+    <div class="row text-center">
+        <h2>Curso</h2><br>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <br>
+            <span class="glyphicon glyphicon-comment logo slideanim"></span>
+        </div>
+        <div class="col-lg-4 text-left">
+            <h4>Miércoles 5 y Jueves 06 de Septiembre 2018.</h4>
+            <h4>8:00 am- 17:00 </h4>
+            <h4><strong>Lugar:</strong> Hospital Dra. Eloísa Díaz. <br>Froilán Roa 6542, La Florida,
+                Santiago de Chile.</h4>
+            <h4><strong>Valor:</strong><br>
+                Medicos: $80.000<br>
+                Becados: $50.000<br>
+                Medicos Socios SCHOT: $60.000
+            </h4>
+        </div>
+        <div class="col-lg-4 text-justify">
+            <h4>El programa se realiza en español y la estructura del curso se contempla de módulos de charlas,
+                crossfire, mesas redondas, casos clínicos, módulos de charlas</h4>
+            <h4>No se considera sistema de traducción.</h4>
+            <h4>Cada charla tiene una duracion de 15 a 20 min. con un espacio de preguntas.
+                Se realizaran dos pausas coffe break y una pausa de almuerzo cada dia.</h4>
+        </div>
+    </div>
+</div>
+
+
+<!-- Contenido -->
+<div id="contenido" class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+            <h2>Contenido</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <div class="text-justify">
+                <h4><li>Secuelas de displasia</li>
+                <li>Epifisiolisis</li>
+                <li>Perthes</li>
+                <li>Pellizcamiento</li>
+                <li>Evolución de preservación de cadera</li>
+                <li>PAO</li>
+                <li>OTT pelvis</li>
+                <li>Prótesis</li>
+                <li>Artroscopia de cadera</li>
+                <li>Rehabilitación</li></h4>
+            </div>
+        </div>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4">
+            <br>
+            <br>
+            <span class="glyphicon glyphicon-calendar logo slideanim"></span>
+        </div>
+    </div>
+</div>
+
+
+<!-- Programa -->
+<div id="programa" class="container-fluid bg-grey">
+    <div class="row">
+        <div class="text-center">
+            <h2>Programa</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Miercoles 05 de Septiembre</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>7.30 - 8.15</td>
+                    <td>Inscripciones y Registro</td>
+                </tr>
+                <tr>
+                    <td>8.15 - 8.30</td>
+                    <td>Inauguración y Presentación de Invitados Extranjeros</td>
+                </tr>
+                <tr>
+                    <td>8:30-9:00</td>
+                    <td>Secuelas de displasia</td>
+                </tr>
+                <tr>
+                    <td>9:10- 9:40</td>
+                    <td>Epifisiolisis</td>
+                </tr>
+                <tr>
+                    <td>9:40 - 10.20</td>
+                    <td>Cafe</td>
+                </tr>
+                <tr>
+                    <td>10.25 - 11.30</td>
+                    <td>Panel de Discusión</td>
+                </tr>
+                <tr>
+                    <td>11:30 -12:00</td>
+                    <td>Perthes</td>
+                </tr>
+                <tr>
+                    <td>12:00-12:30</td>
+                    <td>Pellizcamiento</td>
+                </tr>
+                <tr>
+                    <td>12.30 - 14.00</td>
+                    <td>Almuerzo</td>
+                </tr>
+                <tr>
+                    <td>14:05-15:35</td>
+                    <td>Evolución de preservación de cadera</td>
+                </tr>
+                <tr>
+                    <td>15.35- 16.05</td>
+                    <td>Cafe</td>
+                </tr>
+                <tr>
+                    <td>16:05-17:00</td>
+                    <td>PAO</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-lg-6 text-center">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Jueves 06 de Septiembre</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>08:00-10:00</td>
+                    <td>OTT pelvis</td>
+                </tr>
+                <tr>
+                    <td>10.00 - 10.30</td>
+                    <td>Cafe</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>Prótesis</td>
+                </tr>
+                <tr>
+                    <td>12.30 - 14.00</td>
+                    <td>Almuerzo</td>
+                </tr>
+                <tr>
+                    <td>15:00- 15:30</td>
+                    <td>Artroscopía de cadera</td>
+                </tr>
+                <tr>
+                    <td>15.30 - 16.00</td>
+                    <td>Cafe</td>
+                </tr>
+                <tr>
+                    <td>16:00 -17:00</td>
+                    <td>Mesa redonda</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Invitados -->
+<div id="invitados" class="container-fluid">
+  <div class="text-center">
+    <h2>Invitados</h2><br>
+  </div>
+  <div class="row slideanim">
+
+    <div class="col-lg-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Nacionales</h1>
+        </div>
+        <div class="panel-body">
+            <h4>Dr. Joaquin Lara (Clinica Las Condes)</h4>
+            <h4>Dr. Roberto Raimann (Clinica Las Condes)</h4>
+            <h4>Dr. Martin Salgado (Hospital Sotero del Río)</h4>
+            <h4>Dr. Felipe Hodgson (UC)</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Internacionales</h1>
+        </div>
+        <div class="panel-body">
+            <h4>Dr. Oliver Marin-Peña</h4>
+            <h4>Dr. Manuel Ribas</h4>
+            <h4>Dr. Cristian Alves</h4>
+            <h4>Dr. Roncorroni</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Inscripcion -->
+<div id="inscripcion" class="container-fluid bg-grey">
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <span class="glyphicon glyphicon-check logo slideanim"></span>
+        </div>
+        <div class="col-lg-6 text-justify">
+            <h2>Inscripcion</h2>
+            <h4>Inscribete para participar con nosotros</h4><br>
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Inscribete</button>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog" tabindex="-1">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+                    <h4 class="modal-title">Inscripcion</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form action="{% url 'signup new' %}" method="post">
+                        <div class="form-group">
+                            {% csrf_token %}
+                            <select name = "curso_elegido">
+                            {% for curso in cursos %}
+                                <option value="{{curso.id}}">{{ curso.nombre }}</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nombres" id="nombres" placeholder="Nombres" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="e-mail" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="area_de_trabajo" id="area_de_trabajo" placeholder="Area de Trabajo" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="lugar_de_trabajo" id="lugar_de_trabajo" placeholder="Lugar de Trabajo" required/>
+                            </div>
+
+                            <button type="reset" class="btn btn-default">Borrar</button>
+                            <button type="submit" class="btn btn-default">Inscribirse</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Google Maps -->
+<div id="ubicacion" class="container-fluid">
+    <div class="row text-center">
+        <h2>Ubicacion</h2><br>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 text-center">
+            <span class="glyphicon glyphicon-map-marker logo slideanim"></span>
+        </div>
+        <br>
+        <div id="map" class="col-lg-8 text-center" style="height:500px">
+            <script>
+            function myMap() {
+              var myCenter = new google.maps.LatLng(-33.5140438,-70.5999033);
+              var mapCanvas = document.getElementById("map");
+              var mapOptions = {center: myCenter, zoom: 16};
+              var map = new google.maps.Map(mapCanvas, mapOptions);
+              var marker = new google.maps.Marker({position:myCenter});
+              marker.setMap(map);
+            }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTZMbmPmfj8E_XiEpOmEOcJX3wpsuU_dk&callback=myMap"></script>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Contacto-->
+<div id="contacto" class="container-fluid bg-grey">
+  <h2 class="text-center">Contacto</h2>
+  <div class="row">
+    <div class="col-lg-4 text-center">
+      <h4>Siguenos en redes sociales</h4>
+        <span><a href="#" class="fa fa-facebook logo-small"></a></span>
+        <span><a href="#" class="fa fa-twitter logo-small"></a></span>
+    </div>
+
+    <div class="col-lg-8 slideanim">
+        <form action="{% url 'contact new' %}" method="post">
+            {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-6 form-group">
+              <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" required>
+            </div>
+            <div class="col-lg-6 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            </div>
+          </div>
+          <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Mensaje" required rows="5"></textarea><br>
+
+      <div class="row">
+        <div class="col-lg-12 form-group">
+          <button type="submit" class="btn btn-default">Enviar</button>
+        </div>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<!-- Patrocinan -->
+<div id="patrocinan" class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+            <h2>Patrocinan</h2>
+        </div>
+    </div>
+    <!-- Primera fila -->
+   <div class="row">
+      <div class="col-lg-4">
+        <div class="thumbnail">
+          <a href="https://www.orthopediatrics.com/">
+            <img src="{% static 'web/images/sponsor1.jpeg' %}" style="width:100%">
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="thumbnail">
+          <a href="https://www.grupoarenys.cl/arenysmed/#!/home">
+            <img src="{% static 'web/images/sponsor2.jpeg' %}" style="width:80%">
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="thumbnail">
+          <a href="https://www.savalcorp.com/es/">
+            <img src="{% static 'web/images/sponsor4.jpeg' %}"  style="width:45%">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segunda fila -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="thumbnail">
+          <a href="http://www.promedon.com/cl">
+            <img src="{% static 'web/images/sponsor3.jpeg' %}" style="width:80%">
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="thumbnail">
+          <a href="https://www.depuysynthes.com">
+            <img src="{% static 'web/images/sponsor5.jpeg' %}" style="width:90%">
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add lgooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add lgooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+<script type="text/javascript">
+alert("Mensaje enviado. Nos contactaremos con ud lo antes posible mediante correo electronico");
+</script>
+</body>
+</html>

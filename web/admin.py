@@ -14,9 +14,9 @@ class AssistantAdmin(admin.ModelAdmin):
 
 
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'date')
+    list_display = ('nombre', 'date', 'respondido')
     ordering = ('-date',)
-    search_fields = ['nombre', 'email']
+    search_fields = ['nombre', 'email', 'respondido']
 
 
 class CourseAdmin(admin.ModelAdmin):

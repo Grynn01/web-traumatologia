@@ -23,7 +23,7 @@ class Assistant(models.Model):
     nombres = models.CharField(max_length=30)
     apellidos = models.CharField(max_length=30)
     telefono = models.CharField(max_length=12)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     area_de_trabajo = models.CharField(max_length=40)
     lugar_de_trabajo = models.CharField(max_length=40)
 
@@ -38,6 +38,7 @@ class Assistant(models.Model):
 class Inscription(models.Model):
     asistente = models.ForeignKey(Assistant, null=False, blank=False, on_delete=models.CASCADE)
     curso = models.ForeignKey(Course, null=False, blank=False, on_delete=models.CASCADE)
+    pagado = models.BooleanField(default=False)
     date = models.DateField(default=date.today)
 
     def complete(self):
@@ -52,4 +53,5 @@ class Message(models.Model):
     nombre = models.CharField(max_length=35)
     email = models.EmailField()
     mensaje = models.TextField()
+    respondido = models.BooleanField(default=False)
     date = models.DateField(default=date.today)
