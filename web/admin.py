@@ -1,8 +1,8 @@
 from django.contrib import admin
 from .models import *
-#from import_export.admin import ImportExportModelAdmin
-#from import_export import fields, resources
-#from import_export.widgets import ForeignKeyWidget
+from import_export.admin import ImportExportModelAdmin
+from import_export import fields, resources
+from import_export.widgets import ForeignKeyWidget, CharWidget, DateWidget, Widget
 # Register your models here.
 
 
@@ -24,11 +24,9 @@ class CourseAdmin(admin.ModelAdmin):
     ordering = ('-fecha',)
     search_fields = ['nombre', 'fecha']
 
-"""
-
 
 class InscriptionResource(resources.ModelResource):
-    asistente = fields.Field(
+    apellido = fields.Field(
         column_name='Apellidos',
         attribute='asistente',
         widget=ForeignKeyWidget(Assistant, 'apellidos'))
@@ -37,35 +35,28 @@ class InscriptionResource(resources.ModelResource):
         attribute='asistente',
         widget=ForeignKeyWidget(Assistant, 'nombres'))
     emails = fields.Field(
-        column_name='emails',
+        column_name='Emails',
         attribute='asistente',
         widget=ForeignKeyWidget(Assistant, 'email'))
     curso = fields.Field(
         column_name='Curso',
         attribute='curso',
         widget=ForeignKeyWidget(Course, 'nombre'))
-    date = fields.Field(
-        column_name='Fecha',
-        attribute='curso',
-        widget=ForeignKeyWidget(Course, 'fecha'))
 
     class Meta:
-        fields = ('nombres', 'emails')
+        fields = ()
         exclude = ('id',)
         model = Inscription
 
 
 class InscriptionAdmin(ImportExportModelAdmin):
-    list_display = ('asistente', 'curso')
-    list_filter = ('asistente', 'curso')
+    list_display = ('asistente', 'curso', 'pagado')
+    list_filter = ('asistente', 'curso', 'pagado')
     ordering = ('-date',)
     resource_class = InscriptionResource
     
     
 admin.site.register(Inscription, InscriptionAdmin)
-
-"""
-
 admin.site.register(Assistant, AssistantAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(Course, CourseAdmin)
