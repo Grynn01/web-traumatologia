@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
-
-
+from smail import send_mail
 # Create your views here.
 
 
@@ -26,7 +25,7 @@ def signup_new(request):
         curso = Course.objects.get(id=request.POST['curso_elegido'])
 
         inscripcion, new_inscripcion = Inscription.objects.update_or_create(asistente=asistente, curso=curso)
-
+        send_mail(email)
         return redirect('signup done')
     else:
         return render(request, 'web/index.html', {'cursos': cursos})
