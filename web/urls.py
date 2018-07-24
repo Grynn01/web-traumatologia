@@ -11,4 +11,5 @@ urlpatterns = [
     path('contact/', views.contact_new, name='contact new'),
     path('signup_done/', views.signup_done, name='signup done'),
     path('contact_done/', views.contact_done, name='contact done'),
+    path('vitae/', views.pdf_view, name='pdf view'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
