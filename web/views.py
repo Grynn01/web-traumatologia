@@ -55,7 +55,7 @@ def contact_done(request):
 
 def pdf_view(request):
     with open('/home/ubuntu/WebTraumatologia/static/web/CV_Dr_Joaquín_Lara_Giménez_CipcaChile.pdf', 'r') as pdf:
-        response = HttpResponse(pdf.read(), contenttype='application/pdf')
+        response = HttpResponse(pdf.read(), mimetype='application/pdf')
         response['Content-Disposition'] = 'inline;filename=CV_Dr_Joaquín_Lara_Giménez_CipcaChile.pdf'
         return response
     pdf.closed
