@@ -235,6 +235,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#curso">Curso</a></li>
                 <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#contenido">Contenido</a></li>
+                <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#programa">Programa</a></li>
                 <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#invitados">Invitados</a></li>
                 <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#inscripcion">Inscripción</a></li>
                 <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#ubicacion">Ubicación</a></li>
@@ -320,6 +321,7 @@
 </div>
 
 
+
 <!-- Contenido -->
 <div id="contenido" class="container-fluid">
     <div class="row">
@@ -350,13 +352,26 @@
             <span class="glyphicon glyphicon-calendar logo slideanim"></span>
         </div>
     </div>
-    <div class="row">
-        <div class="text-center">
-            <h4>Revisa nuestro programa </h4><h2><a href="{% static 'web/PROGRAMA_CIPCA_2018_prefinal.pdf' %}">AQUÍ</a></h2>
-        </div>
-    </div>
 </div>
 
+
+<!--Programa-->
+<div id="programa" class="container-fluid bg-grey">
+    <div class="row">
+        <div class="text-center">
+            <h2>Programa</h2>
+        </div>
+    </div>
+    <div class="row">
+        <img src="{% static 'web/images/programa.jpg' %}" class="img-responsive" style="margin: 0 auto;" alt="Banner">
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <h4>Descarga el programa <a href="{% static 'web/PROGRAMA_CIPCA_2018_prefinal.pdf' %}">AQUI</a> </h4>
+        </div>
+    </div>
+
+</div>
 
 <!-- Invitados -->
 <div id="invitados" class="container-fluid">
